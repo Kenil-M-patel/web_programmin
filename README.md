@@ -22,5 +22,5 @@ Use JavaScript to Implement validation in Practical No.4.
 16.	Write a PHP script for user authentication using PHP-MYSQL. Use session for storing username.						
 17.	Using AJAX Create visual search feature to search using name for practical number 15 which list name, mobile number and email id of matching users. 						
 18.	Create a REST API using php.						
-19.	Create an Image slider using jQuery.						
-20	Cookie Example						
+19.	Create an Image slider using jQuery.  				
+20	Cookie Example	.					

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            color: blue;
+        }
+
+        table {
+            height: 500px;
+            width: 750px;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">User Registration Form</h1>
+    <form align="center" border="2px" onsubmit="return validateForm()" id="registrationForm">
+        <table border="1" align="center">
+            <tr>
+                <td>First name</td>
+                <td><input type="text" id="firstName"></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><input type="text" id="lastName"></td>
+            </tr>
+            <tr>
+                <td>Birth date</td>
+                <td><input type="date" id="birthDate"></td>
+            </tr>
+            <tr>
+                <td>Email address</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Mobile no.</td>
+                <td><input type="number" id="mobileNo"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea id="address"></textarea></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <select id="state">
+                        <option value="">--select--</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Maharastra">Maharastra</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>
+                    <select id="education">
+                        <option value="">--select--</option>
+                        <option value="SSC">SSC</option>
+                        <option value="HSC">HSC</option>
+                        <option value="UG">UG</option>
+                        <option value="PG">PG</option>
+                        <option value="PHD">PHD</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Upload image</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    Male <input type="radio" value="male" name="gender"> 
+                    Female <input type="radio" value="female" name="gender">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var birthDate = document.getElementById('birthDate').value;
+            var email = document.getElementById('email').value;
+            var mobileNo = document.getElementById('mobileNo').value;
+            var address = document.getElementById('address').value;
+            var state = document.getElementById('state').value;
+            var education = document.getElementById('education').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+
+            if (firstName === '' || lastName === '' || birthDate === '' || email === '' || mobileNo === '' || address === '' || state === '' || education === '' || !gender ) {
+                alert('Please fill in all required fields.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

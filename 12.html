@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h1 align="center">User Registration Form</h1>
+    <form align="center" border="2px" onsubmit="displayInfo(event)">
+        <table border="1" align="center">
+            <tr>
+                <td>First name</td>
+                <td><input type="text" id="firstName"></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><input type="text" id="lastName"></td>
+            </tr>
+            <tr>
+                <td>Birth date</td>
+                <td><input type="date" id="birthDate"></td>
+            </tr>
+            <tr>
+                <td>Email address</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Mobile no.</td>
+                <td><input type="number" id="mobileNo"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea id="address"></textarea></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <select id="state">
+                        <option>--select--</option>
+                        <option>Gujarat</option>
+                        <option>Maharastra</option>
+                        <option>Rajasthan</option>
+                        <option>Delhi</option>
+                        <option>Tamil Nadu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>
+                    <select id="education">
+                        <option>--select--</option>
+                        <option>SSC</option>
+                        <option>HSC</option>
+                        <option>UG</option>
+                        <option>PG</option>
+                        <option>PHD</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Upload image</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    Male <input type="radio" value="male" name="gender"> 
+                    Female <input type="radio" value="female" name="gender">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function displayInfo(event) {
+            event.preventDefault();
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var birthDate = document.getElementById('birthDate').value;
+            var email = document.getElementById('email').value;
+            var mobileNo = document.getElementById('mobileNo').value;
+            var address = document.getElementById('address').value;
+            var state = document.getElementById('state').value;
+            var education = document.getElementById('education').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+        
+
+            var userInfo = "First Name: " + firstName + "<br>" +
+                            "Last Name: " + lastName + "<br>" +
+                            "Birth Date: " + birthDate + "<br>" +
+                            "Email: " + email + "<br>" +
+                            "Mobile No.: " + mobileNo + "<br>" +
+                            "Address: " + address + "<br>" +
+                            "State: " + state + "<br>" +
+                            "Education: " + education + "<br>" +
+                            "Gender: " + gender + "<br>" +
+                            "Hobbies: " + hobbies.join(', ');
+
+            document.body.innerHTML += "<div>" + userInfo + "</div>";
+        }
+    </script>
+</body>
+</html>
